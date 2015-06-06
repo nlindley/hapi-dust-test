@@ -30,16 +30,16 @@ server.route({
   handler: function(request, reply) {
     var stream = new PassThrough();
 
-    stream.push("First chunk\n");
+    stream.push('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Streaming Template Test</title>\n<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>\n</head>\n\n<body>\n<p>First part</p>\n<p>');
     setTimeout(function() {
-      stream.push("Second chunk\n");
+      stream.push("Delayed part\n");
     }, 2000);
     setTimeout(function() {
-      stream.push("Third chunk\n");
+      stream.push('</p></body></html>');
       stream.push(null);
     }, 5000);
 
-    reply(stream);
+    reply(stream).type('text/html');
   }
 });
 
