@@ -24,7 +24,7 @@
   "dependencies": {
     "dustjs-linkedin": "^2.7.1",
     "hapi": "^8.6.1",
-    "hapi-dust": "^1.1.0",
+    "hapi-dust": "git://github.com/nlindley/hapi-dust.git#179d98f4c978e88ad72fc00984cfa8a53142a3b6",
     "promise": "^7.0.1"
   }
 }
